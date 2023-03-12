@@ -65,6 +65,7 @@ String user = intent.getStringExtra("user");
    
 ## Base de datos
 ```java
+// BASEDATOS.java
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -208,7 +209,6 @@ Por ejemplo:
 5. Aceptamos todas las importaciones y arreglos de warnings
 6. Añades el codigo necesario (esta todo lo necesario comentado)
     ```java
-    // BASEDATOS.java
     import android.view.LayoutInflater;
     import android.view.View;
     import android.view.ViewGroup;
