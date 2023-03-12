@@ -279,7 +279,7 @@ Por ejemplo:
         }
     }
     ```
-7. De vuelta en el `OnCreate(Bundle savedInstanceState)` del `.java` de la vista añadir el siguiente codigo para cargar el RecyclerView
+7. De vuelta en el `OnCreate(Bundle savedInstanceState)` del `ActiviyRecyclerView.java` de la vista añadir el siguiente codigo para cargar el RecyclerView
     ```java
     // RECYCLER VIEW
     // 1. Crear el ArrayList
