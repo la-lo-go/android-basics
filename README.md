@@ -147,40 +147,40 @@ public class BD extends SQLiteOpenHelper {
 
 ## Ejemplo login y registro con SQLite
 ```java 
-    btnLogin.setOnClickListener(v -> {
-        String user = txtUser.getText().toString();
-        String password = txtPassword.getText().toString();
-        Boolean validado = validar(user, password);
+btnLogin.setOnClickListener(v -> {
+    String user = txtUser.getText().toString();
+    String password = txtPassword.getText().toString();
+    Boolean validado = validar(user, password);
 
-        if (validado) {
-            if(db.checkUser(user)) { // El usuario existe
-                if (db.checkUsernamePassword(user, password)) { // Usuario y contraseña coinciden
-                    Intent intent = new Intent(this, SiguienteActivity.class);
-                    intent.putExtra("user", user);
-                    startActivity(intent);
-                } else { // Contraseña incorrecta
-                    Toast.makeText(this, "Contraseña incorrectos", Toast.LENGTH_SHORT).show();
-                }
-            } else { // El usuario no existe
-                Toast.makeText(this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
+    if (validado) {
+        if(db.checkUser(user)) { // El usuario existe
+            if (db.checkUsernamePassword(user, password)) { // Usuario y contraseña coinciden
+                Intent intent = new Intent(this, SiguienteActivity.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
+            } else { // Contraseña incorrecta
+                Toast.makeText(this, "Contraseña incorrectos", Toast.LENGTH_SHORT).show();
             }
-        } else {
-            Toast.makeText(this, "Introduce datos", Toast.LENGTH_SHORT).show();
+        } else { // El usuario no existe
+            Toast.makeText(this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
         }
-    });
+    } else {
+        Toast.makeText(this, "Introduce datos", Toast.LENGTH_SHORT).show();
+    }
+});
 
-    btnRegister = findViewById(R.id.btnRegistrar);
-    btnRegister.setOnClickListener(v -> {
-        String user = txtUser.getText().toString();
-        String password = txtPassword.getText().toString();
+btnRegister = findViewById(R.id.btnRegistrar);
+btnRegister.setOnClickListener(v -> {
+    String user = txtUser.getText().toString();
+    String password = txtPassword.getText().toString();
 
-        if(!db.checkUser(user) && validar(user, password)) { // Registro correcto
-            db.insertUser(txtUser.getText().toString(), txtPassword.getText().toString());
-            Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show();
-        } else { // Ese usuario ya existia
-            Toast.makeText(this, "Usuario ya estaba registrado", Toast.LENGTH_SHORT).show();
-        }
-    });
+    if(!db.checkUser(user) && validar(user, password)) { // Registro correcto
+        db.insertUser(txtUser.getText().toString(), txtPassword.getText().toString());
+        Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show();
+    } else { // Ese usuario ya existia
+        Toast.makeText(this, "Usuario ya estaba registrado", Toast.LENGTH_SHORT).show();
+    }
+});
 ```
 
 ## Importar fotos
