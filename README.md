@@ -1,15 +1,15 @@
 # ANDROID BASICS
-Cheatsheat de los basicos para el desarrollo de aplicaciones Android con un ejemplo de Login y RecyclerView
+Android app development cheat sheet covers essential concepts like onClick events, activity handling, variable passing, animations, and SQLite database usage. Additionally, it provides an example of login implementation and RecyclerView with an onClick listener. The cheat sheet's SQLite database implementation includes code snippets for creating, updating, inserting, and deleting data, and querying the database for user login credential validation.
 
 ## Añadir OnClick
 ```java
-    Buttom btnLogin;
+Buttom btnLogin;
 
-    btnLogin = findViewById(R.id.btnLogin);
+btnLogin = findViewById(R.id.btnLogin);
 
-    btnLogin.setOnClickListener(v -> {
-            Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show();
-    });
+btnLogin.setOnClickListener(v -> {
+        Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show();
+});
 ```
 
 ## Iniciar una actividad desde otra
